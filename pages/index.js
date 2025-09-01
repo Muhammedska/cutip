@@ -7,7 +7,7 @@ export default function Home() {
     const year = today.getFullYear();
     const formattedDate = `${day}.${month}.${year}`;
 
-    const schedule = ders.filter(lesson => lesson['TARİH'] === formattedDate);
+    const schedule = ders.filter(lesson => lesson['TARIH'] === formattedDate);
 
     return (
         <main className="min-h-screen bg-gray-100 p-8 flex flex-col items-center font-sans">
