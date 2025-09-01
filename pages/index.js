@@ -1,4 +1,4 @@
-import ders from '@/data/ders.json';
+import ders from '../data/ders.json';
 
 export default function Home() {
     const today = new Date();
