@@ -10,7 +10,7 @@ export default function Home() {
     const schedule = ders.filter(lesson => lesson['TARIH'] === formattedDate);
 
     return (
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        
         <main className="min-h-screen bg-gray-100 p-8 flex flex-col items-center font-sans">
             <div className="max-w-4xl w-full bg-white rounded-xl shadow-lg p-8 transform transition-transform duration-300 hover:scale-[1.01]">
                 <header className="text-center mb-8">
