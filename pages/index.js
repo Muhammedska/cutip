@@ -9,7 +9,7 @@ export default function Home() {
     const formattedDate = `${day}.${month}.${year}`;
 
     // 'TARİH' anahtarını doğru bir şekilde kullan
-    const schedule = ders.filter(lesson => lesson['TARİH'] === formattedDate);
+    const schedule = ders.filter(lesson => lesson['TARIH'] === formattedDate);
 
     // Şu anki dersi bul
     const now = new Date();
