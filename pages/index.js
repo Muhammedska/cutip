@@ -1,37 +1,13 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
- 
-import { notFound } from 'next/navigation';
+import ders from '@/data/ders.json';
 
-async function getDailySchedule() {
-    try {
-        const res = await fetch('http://localhost:3000/api/schedule', {
-            // Verinin her istekte güncel olmasını sağlar
-            cache: 'no-store' 
-        });
-
-        if (!res.ok) {
-            // Hata durumunda 404 sayfasına yönlendirir
-            notFound();
-        }
-
-        return res.json();
-    } catch (error) {
-        console.error("Ders programı alınırken bir hata oluştu:", error);
-        return { schedule: [] }; // Hata durumunda boş bir program döndür
-    }
-}
-
-export default async function Home() {
-    const data = await getDailySchedule();
-    const schedule = data.schedule || [];
-
+export default function Home() {
     const today = new Date();
     const day = String(today.getDate()).padStart(2, '0');
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const year = today.getFullYear();
     const formattedDate = `${day}.${month}.${year}`;
+
+    const schedule = ders.filter(lesson => lesson['TARİH'] === formattedDate);
 
     return (
         <main className="min-h-screen bg-gray-100 p-8 flex flex-col items-center font-sans">
