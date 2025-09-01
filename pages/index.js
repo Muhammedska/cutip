@@ -3,7 +3,7 @@ import ders from 'data/ders.json';
 export default function Home() {
     const today = new Date();
     const day = String(today.getDate());
-    const month = String(today.getMonth() + 1);
+    const month = String(today.getMonth() + 1).padStart(2, '0');
     const year = today.getFullYear();
     const formattedDate = `${day}.${month}.${year}`;
 
